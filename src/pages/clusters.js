@@ -10,7 +10,6 @@ const Clusters = ({ setPage }) => {
   useEffect(() => {
     const onKeyPress = (e) => {
       e.preventDefault();
-      console.log(e.key);
       if (e.key === "p") setSelected((s) => clamp(s - 1, 0, 100));
       if (e.key === "n") setSelected((s) => clamp(s + 1, 0, 100));
       if (e.key === "Enter") setPage("server");
@@ -19,7 +18,7 @@ const Clusters = ({ setPage }) => {
     document.addEventListener("keypress", onKeyPress);
 
     return () => document.removeEventListener("keypress", onKeyPress);
-  }, []);
+  }, [setPage]);
 
   const [serverList, setServerList] = useState(
     () =>

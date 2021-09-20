@@ -1,6 +1,6 @@
 import useTasks from "../hooks/useTasks";
 import useTicks from "../hooks/useTicks";
-import { clamp, interpolate } from "../utils/math";
+import { interpolate } from "../utils/math";
 
 const Server = () => {
   const [ticks, latest, total] = useTicks({
@@ -21,13 +21,7 @@ const Server = () => {
     length: 150,
   });
 
-  const [ticks3, latest3, total3] = useTicks({
-    generation: "following",
-    speed: 1000,
-    length: 50,
-  });
-
-  const [ticks6, latest6, total6] = useTicks({
+  const [ticks3, latest3] = useTicks({
     generation: "following",
     speed: 1000,
     length: 50,

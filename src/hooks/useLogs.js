@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { random, randomItem, setRandomInterval } from "../utils/random";
+import { random, randomItem } from "../utils/random";
 import randomLogs from "../assets/randomlogs.json";
 
 const getRandomLog = () => {

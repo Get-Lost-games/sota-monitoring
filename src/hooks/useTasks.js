@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { clamp } from "../utils/math";
 
 const basePath = ["/Applications", "/System", "/User", "System/Library"];
-const applications = ["iTerm2", "pm2", "node", "py_next", "py_0.93"];
+// const applications = ["iTerm2", "pm2", "node", "py_next", "py_0.93"];
 
 var randomItem = (items) => items[Math.floor(Math.random() * items.length)];
 const random = (length) => Math.floor(Math.random() * (length + 1));

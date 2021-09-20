@@ -28,12 +28,12 @@ const Remote = ({ setPage }) => {
     document.addEventListener("keypress", onKeyPress);
 
     return () => document.removeEventListener("keypress", onKeyPress);
-  }, []);
+  }, [setPage]);
 
   return (
     <div className="wallpaper">
       <div className="wallpaper__logo">
-        <img src="/logo-white.svg" />
+        <img src="/logo-white.svg" alt="Logo" />
       </div>
       <div className="wallpaper__corner">
         <span>{fixedTime ? "18:20" : time}</span>
