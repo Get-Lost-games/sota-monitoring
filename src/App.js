@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Server from "./pages/server";
 import Clusters from "./pages/clusters";
 import Remote from "./pages/remote";
-import { useEffect } from "react/cjs/react.development";
 
 const App = () => {
   const [page, setPage] = useState("clusters");

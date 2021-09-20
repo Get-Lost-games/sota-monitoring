@@ -5,11 +5,7 @@ import randomLogs from "../assets/randomlogs.json";
 const getRandomLog = () => {
   const item = randomItem(randomLogs);
   return {
-    label: item.message
-      //   .replace("<timestamp>", new Date().toString())
-      .replace("<timestamp>", "")
-      //   .replace("<seq_num>", `${item.cn1} `),
-      .replace("<seq_num>", ""),
+    label: item.message.replace("<timestamp>", "").replace("<seq_num>", ""),
     level: parseInt(item.severity),
   };
 };
