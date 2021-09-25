@@ -12,6 +12,18 @@ const App = () => {
       if (e.key === "1") setPage("clusters");
       if (e.key === "2") setPage("connections");
       if (e.key === "3") setPage("remote");
+      if (e.key === "e") {
+        var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
     };
 
     document.addEventListener("keypress", onKeyPress);

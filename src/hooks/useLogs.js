@@ -11,14 +11,16 @@ const getRandomLog = () => {
 };
 
 const useLogs = (selected) => {
-  const [logs, setLogs] = useState(() => [getRandomLog()]);
+  const [logs, setLogs] = useState(() => []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLogs([...logs, getRandomLog()]);
     }, 50 + random(450));
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [logs]);
 
   useEffect(() => setLogs([]), [selected]);
