@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Server from "./pages/server";
 import Clusters from "./pages/clusters";
 import Remote from "./pages/remote";
+import Connections from "./pages/connections";
 
 const App = () => {
   const [page, setPage] = useState("clusters");
@@ -22,6 +23,7 @@ const App = () => {
     <div className="panels" data-page={page}>
       {page === "server" && <Server />}
       {page === "remote" && <Remote setPage={setPage} />}
+      {page === "connections" && <Connections />}
       {page === "clusters" && <Clusters setPage={setPage} />}
       <div className="panels__footer">
         <div className="cluster">

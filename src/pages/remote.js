@@ -37,7 +37,7 @@ const Remote = ({ setPage }) => {
       </div>
       <div className="wallpaper__corner">
         <span>{fixedTime ? "18:20" : time}</span>
-        <span>Press enter so sign in</span>
+        <span>Press enter to sign in</span>
       </div>
     </div>
   );
