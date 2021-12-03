@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { random, randomItem } from "../utils/random";
+import { randomItem } from "../utils/random";
 import randomLogs from "../assets/randomlogs.json";
+import useRandomInterval from "./useRandomInterval";
 
 const getRandomLog = () => {
   const item = randomItem(randomLogs);
@@ -10,18 +11,21 @@ const getRandomLog = () => {
   };
 };
 
+let _logs = [];
+
 const useLogs = (selected) => {
-  const [logs, setLogs] = useState(() => []);
+  const [logs, setLogs] = useState([]);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLogs([...logs, getRandomLog()]);
-    }, 50 + random(450));
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [logs]);
+  useRandomInterval(
+    () => {
+      const oldLogs =
+        _logs.length > 100 ? _logs.filter((_, i) => i !== 0) : _logs;
+      _logs = [...oldLogs, getRandomLog()];
+      setLogs(_logs);
+    },
+    0,
+    400
+  );
 
   useEffect(() => setLogs([]), [selected]);
 
